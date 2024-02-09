@@ -21,7 +21,7 @@ test(`Given an array arr and a chunk size, return a chunked array. A chunked arr
     const arr5 = [8, 5, 3, 2, 6];
     const size5 = 6;
 
-    const arr6 = [];
+    const arr6 = [] as  Array<number>;
     const size6 = 1;
 
     // const result1 = chunk(arr1, size1);
@@ -31,10 +31,11 @@ test(`Given an array arr and a chunk size, return a chunked array. A chunked arr
     // const result5 = chunk(arr5, size5);
     const result6 = chunk(arr6, size6);
 
-    expect(result1).toStrictEqual([[1], [2], [3], [4], [5]])
-    expect(result2).toStrictEqual([[1, 9], [6, 3], [2]])
-    expect(result3).toStrictEqual([[1, 9, 6], [3, 2]])
-    expect(result4).toStrictEqual([[1, 9], [6, 3], [2, 74]])
-    expect(result5).toStrictEqual([[8, 5, 3, 2, 6]])
+    // expect(result1).toStrictEqual([[1], [2], [3], [4], [5]])
+    // expect(result2).toStrictEqual([[1, 9], [6, 3], [2]])
+    // expect(result3).toStrictEqual([[1, 9, 6], [3, 2]])
+    // expect(result4).toStrictEqual([[1, 9], [6, 3], [2, 74]])
+    // expect(result5).toStrictEqual([[8, 5, 3, 2, 6]])
+    expect(result6).toStrictEqual([])
 
 })

@@ -1,10 +1,7 @@
 export const chunk = function (arr: Array<number>, size: number) {
 
     const length = arr.length;
-    const arrayRemainder = length % size;
     const arrayCount = Math.trunc(length / size);
-
-    // type artype = number | string;
 
     const result: number[][] = [];
     let count: number = 0;
