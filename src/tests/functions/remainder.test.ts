@@ -6,25 +6,35 @@ test(`Given an array arr and a chunk size, return a chunked array. A chunked arr
     // expect(arr1.length).toBeGreaterThanOrEqual(0)
     // expect(size).toBeGreaterThan(0)
 
-    let arr = [1, 2, 3, 4, 5];
-    let size = 1;
-    const result1 = chunk(arr, size);
+    const arr1 = [1, 2, 3, 4, 5];
+    const size1 = 1;
+
+    const arr2 = [1, 9, 6, 3, 2];
+    const size2 = 2;
+
+    const arr3 = [1, 9, 6, 3, 2];
+    const size3 = 3;
+
+    const arr4 = [1, 9, 6, 3, 2, 74];
+    const size4 = 2;
+
+    const arr5 = [8, 5, 3, 2, 6];
+    const size5 = 6;
+
+    const arr6 = [];
+    const size6 = 1;
+
+    // const result1 = chunk(arr1, size1);
+    // const result2 = chunk(arr2, size2);
+    // const result3 = chunk(arr3, size3);
+    // const result4 = chunk(arr4, size4);
+    // const result5 = chunk(arr5, size5);
+    const result6 = chunk(arr6, size6);
+
     expect(result1).toStrictEqual([[1], [2], [3], [4], [5]])
-
-    arr = [1, 9, 6, 3, 2];
-    size = 2;
-    const result2 = chunk(arr, size);
     expect(result2).toStrictEqual([[1, 9], [6, 3], [2]])
-
-    arr = [1, 9, 6, 3, 2];
-    size = 3;
-    const result3 = chunk(arr, size);
     expect(result3).toStrictEqual([[1, 9, 6], [3, 2]])
+    expect(result4).toStrictEqual([[1, 9], [6, 3], [2, 74]])
+    expect(result5).toStrictEqual([[8, 5, 3, 2, 6]])
 
-    // const arr3 = [8, 5, 3, 2, 6];
-    // size = 6;
-    // const arr4 = [];
-    // size = 1;
-    //const arr5 = [1,2 ,3 ]
-    // const size5 = 1;
 })

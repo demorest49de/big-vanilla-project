@@ -8,24 +8,28 @@ export const chunk = function (arr: Array<number>, size: number) {
 
     const result: number[][] = [];
     let count: number = 0;
-    result[count] = [];
     let iteration: number = 0;
-    arr.forEach((v, i) => {
 
-        if (iteration < arrayCount) {
-            const temp = result[count];
-            temp.push(v);
-            iteration += 1;
-            return;
-        } else {
-            iteration = 0;
-            count += 1;
-            result[count] = [];
+    arr.forEach((value, i, array) => {
+        if (size === 1) {
+            result.push([]);
+            const index = result.length - 1;
+            result[index].push(value);
             return;
         }
 
-        if (arrayRemainder > 0) {
-
+        if (iteration < size) {
+            if (iteration === 0) result.push([]);
+            result[count].push(value);
+            iteration += 1;
+            return;
+        }
+        if (count < arrayCount) {
+            iteration = 1;
+            result.push([]);
+            count += 1;
+            result[count].push(value);
+            return;
         }
     });
 
