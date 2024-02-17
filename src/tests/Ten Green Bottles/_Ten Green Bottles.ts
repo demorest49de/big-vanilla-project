@@ -1,59 +1,19 @@
-export function tenGreenBottles(n: number) {
-    const bottles = [
-        {
-            title: 'one',
-            value: 1,
-        },
-        {
-            title: 'two',
-            value: 2,
-        },
-        {
-            title: 'three',
-            value: 3,
-        },
-        {
-            title: 'four',
-            value: 4,
-        },
-        {
-            title: 'five',
-            value: 5,
-        },
-        {
-            title: 'six',
-            value: 6,
-        },
-        {
-            title: 'seven',
-            value: 7,
-        },
-        {
-            title: 'eight',
-            value: 8,
-        },
-        {
-            title: 'nine',
-            value: 9,
-        },
-        {
-            title: 'ten',
-            value: 10,
-        },
-    ]
+export function tenGreenBottles(n) {
+    const bottles = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten']
 
-    const nurseryRhyme: string[] = [
+    const nurseryRhyme = [
         'hanging on the wall,\n',
         'should accidentally fall,\n',
         'hanging on the wall.\n'
     ]
+
     let count = n;
-    let result: string[] = [];
+    let result = [];
     for (let i = n - 1; i >= 0; i--) {
         const isPlural = count > 1;
         const pluralArray = ['green bottles', 'green bottle'];
         const bottleQty = isPlural ? pluralArray[0] : pluralArray[1];
-        const [letter, ...rest] = bottles[i].title.split('')
+        const [letter, ...rest] = bottles[i].split('')
         let qty = ``;
         let strTemp = ``
         let arrResult = ``
@@ -62,14 +22,14 @@ export function tenGreenBottles(n: number) {
                 case 0:
                     qty = [letter.toUpperCase(), ...rest].join('');
                     strTemp = [qty, bottleQty, rhyme].join(' ');
-                    arrResult = Array<string>(2).fill(strTemp).join('')
+                    arrResult = Array(2).fill(strTemp).join('')
                     return arrResult;
                 case 1:
                     qty = (isPlural ? 'And if ' : 'If that ') + 'one';
                     strTemp = [qty, pluralArray[1], rhyme].join(' ');
                     return strTemp;
                 case 2:
-                    qty = (isPlural ? bottles[i - 1].title : 'no');
+                    qty = (isPlural ? bottles[i - 1] : 'no');
                     const firstWord = 'There\'ll be'
                     const pluralWord = isPlural ?
                         i - 1 > 0 ? pluralArray[0] : pluralArray[1]
@@ -84,6 +44,5 @@ export function tenGreenBottles(n: number) {
         result = [...result, ...block]
         count -= 1;
     }
-    const asdf = result.join('')
     return result.join('');
 }
