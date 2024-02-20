@@ -1,8 +1,8 @@
-import {TheAlphabetProduct} from "./The alphabet product ";
+import {alphabet} from "./Alphabet";
 
 
-test('Flick Switch', () => {
+test("The alphabet product", () => {
 
-    expect([true, false, false, false]).toStrictEqual(TheAlphabetProduct(["codewars", "flick", "code", "wars"]))
+    expect(4).toStrictEqual(alphabet([2, 3, 4, 1, 12, 6, 2, 4]))
 
 })
