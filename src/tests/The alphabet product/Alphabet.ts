@@ -1,5 +1,5 @@
 export function alphabet(ns) {
-
+    const sorted = ns.sort()
 }
 
 // let isFlicked = true;
